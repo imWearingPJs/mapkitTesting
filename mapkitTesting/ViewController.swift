@@ -9,6 +9,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     @IBOutlet weak var detailButton: UIButton!
     @IBOutlet weak var startStop: UIButton!
     @IBOutlet weak var locateMe: UIButton!
+    @IBOutlet weak var locationButton: MKUserTrackingButton!
     
     var locationManager = CLLocationManager()
     var routeCoordinates: [CLLocationCoordinate2D] = []
@@ -20,28 +21,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         setDelegates()
         doLocationStuff()
     }
-    
-//    func setupUserTrackingButtonAndScaleView() {
-//        mapView.showsUserLocation = true
-//
-//        let button = MKUserTrackingButton(mapView: mapView)
-//        button.layer.backgroundColor = UIColor(white: 1, alpha: 0.8).cgColor
-//        button.layer.borderColor = UIColor.white.cgColor
-//        button.layer.borderWidth = 1
-//        button.layer.cornerRadius = 5
-//        button.translatesAutoresizingMaskIntoConstraints = false
-//        view.addSubview(button)
-//
-//        let scale = MKScaleView(mapView: mapView)
-//        scale.legendAlignment = .trailing
-//        scale.translatesAutoresizingMaskIntoConstraints = false
-//        view.addSubview(scale)
-//
-//        NSLayoutConstraint.activate([button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10),
-//                                     button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-//                                     scale.trailingAnchor.constraint(equalTo: button.leadingAnchor, constant: -10),
-//                                     scale.centerYAnchor.constraint(equalTo: button.centerYAnchor)])
-//    }
     
     func setDelegates() {
         mapView.delegate = self
